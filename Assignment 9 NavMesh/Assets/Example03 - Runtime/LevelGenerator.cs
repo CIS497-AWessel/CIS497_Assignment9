@@ -1,4 +1,11 @@
+/*
+ * Anthony Wessel
+ * Assignment 9
+ * Generates player and walls and builds the navmesh during runtime
+ */
+
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LevelGenerator : MonoBehaviour {
 
@@ -10,9 +17,13 @@ public class LevelGenerator : MonoBehaviour {
 
 	private bool playerSpawned = false;
 
+    public NavMeshSurface surface;
+
 	// Use this for initialization
 	void Start () {
 		GenerateLevel();
+
+        surface.BuildNavMesh();
 	}
 	
 	// Create a grid based level
